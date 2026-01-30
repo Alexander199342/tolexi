@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Lexi 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: #2a1f3d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 90vw;
+      max-height: 90vh;
+      cursor: pointer;
+      transition: opacity 0.6s ease;
+    }
+  </style>
+</head>
+<body>
+
+<img id="card" src="image1.png" alt="Tap to open">
+
+<script>
+  const card = document.getElementById("card");
+  let opened = false;
+
+  card.addEventListener("click", () => {
+    if (opened) return;
+    opened = true;
+
+    card.style.opacity = 0;
+
+    setTimeout(() => {
+      card.src = "image2.png";
+      card.style.opacity = 1;
+    }, 600);
+  });
+</script>
+
+</body>
+</html>
